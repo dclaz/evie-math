@@ -154,6 +154,15 @@
     }
   }
 
+  function speechBusy() {
+    if (!("speechSynthesis" in window)) { return false; }
+    try {
+      return window.speechSynthesis.speaking || window.speechSynthesis.pending;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function speakProblem() {
     speak(current.a + " plus " + current.b, 0.85, 1.3);
   }
@@ -390,8 +399,14 @@
     soundBounce();
     setTyped("");
 
-    speak(RETRY[(Math.random() * RETRY.length) | 0], 0.95, 1.35);
-    speakProblem();
+    // Only prompt when the voice is actually free. Lines are never cancelled,
+    // so without this a child repeating a wrong answer stacks two utterances
+    // per attempt and the game keeps talking long after she has stopped. The
+    // boing and the shake still answer every attempt instantly.
+    if (!speechBusy()) {
+      speak(RETRY[(Math.random() * RETRY.length) | 0], 0.95, 1.35);
+      speakProblem();
+    }
   }
 
   /* ---------------- input ---------------- */
