@@ -1,0 +1,424 @@
+/* Fredoka (Google Fonts, SIL Open Font License 1.1 — see OFL.txt) — subset to
+   the twelve glyphs this game ever draws (0-9, + and =) and embedded as data
+   URIs, so the game needs no network and no font install.
+   Chosen for its rounded, chunky, high-legibility numerals. */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: block;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAAdoAA8AAAAADHQAAAcRAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGx4cLgZgP1NUQVRAAEwRCAqNdIsKCx4AATYCJAM4BCAFhEIHIAwHG+QJEdWsHsg0UhbO38//z+3tPiDGfEtCVkS1hXamjaog9Vbabrnn4AP8zV4NTD/xx4ndXTXVrkFsUDtY3MA106VXcONAp7TLpqJRdNB4gPFp/1ZBe0+zB+YH+8dyidtFJRbaz1ULCICKOeMb6MixM1cQCgW16LonBCHWVJQMd8948fTRJ2hvHn55Bw0dkbxZkWZLNxAESFy6wenTl/PpHjbRGmyTOkLfHwD21Mcznz8/eYp2LMBeedTVWIf8E/8BLLQv/5Oa+VsLoIBACIUEQBvrliS+P3/xxcP09ydfXhDGBGRyEvnwJHgVFBQKBQ1K1qXknxkNCnakB1J2SliA1diJvamAD8OGLvev+8OdcMdpkG0lgVwXfk75Tvo5qWmAdHvMWBKM4hDcmQm8UXIQcfgTSYoyI9Ln23lyyYmlgSUrAoGlgYiIiIjzQV7lkTfI85Dbtm2T4TiOw4RlWRZ00zTNa6KpLCuLyLBbVT5sQrdGHvJWCjLamGiBojffyq9dVZi1+3pRzcqC9B1XeSsZSUnT2xzH6SKjtFHl1fnJ0JPzVV6YSobjOExYFnSzfXi4f4nGRE0B9OJq9SG3bXuewUROwsyYggYmhsrIKG1UeW0hGUV1TNQVkVFYq/LqfK24e1dj6uy4pLIxhwlrwoJe3qzFNJSU+Es+dCGRx9ExcdNvpzVtzWmYcYPJRlIREwUp/APJ+Ve53Vg4LbaQjKTpcXlM5CyNyclhosnee7KjtehsNTp3WW4h3Y5LK2JXRYC6/Ar1SlxcHCsN7GYoX3QO2sbN4eJkTIvzF95w1yjvqS+GXtJwlecmKmhds9XYlDzm9QvKdtaEHp9ttL2qrChOi8ktrRSFTd2RXJwfPf1D06etWrdpPpZ2o2hMjrowcNW2nNHLV+eu/MaFDQso3KnBweGi621XrxZNLHmjVyOlqp4F6sCZK3NNgD5CMW5f6l70Ebv8Z3mte1qHhWU4Z4BkxxT5GhOVxbTqQD9aJVliSC72i44s9OuQqCyhVQUE0qsm/3wS8nxjZpLj7csJlpOFX9Sm0dL5xbFmQREDDHdvio/WBz4+FF+ND1auPXlpzr4Qz6lDdj6ZuyZYiioX2XkZUfbujCrHkB1mDVur5rju1omaR+8Qscu/aDXfs9lBZGGMtdjblNAp2twp0U+c8HbCFJHrpXscXZpWla7nQEKElyjjjF7JbvoswcjrXb0HnFQrHZfyRVMOyTjhJRpNcRhXbNSyuKlpQrFf7Tiqfyxn3QfW7afseH6osVB9V56gVQ8Jev7cY7lcYrbUdjNhq6vmWxV7oKf6WyXb3ZObm7xv8Kgf8rxE2XoRMeCrVv2tkqPidP6KT2xfM+vlUcttHZN2p+38fJrnnMAQj1ciSVW2SGDLFtBzXoWOSGYe3O66LoehVUqnvCbfg8NP06oinYiNtOqsK5ddnP0zVdFRmoyAjhHNDVGgsVKazYb+BSmqQea60sTu2o7s72kaTamOE2jlC/69YRzWHVkrjLK1MxZ3iDba6gzWsdIMlYCvCBGKJ0VzRWwzDruq//dj6yW1AaXhOUFWZ/ITW5em1kR+J8o1z6q4Xsp8fUlkmb5cWRpAjP0PNju+1WiutchDV866Zcn23JSlMJlK6/Qx0Ta9sTyCdzNIO1IdenrWSrZM75NjNeTKAybIltqEItsWuWxJN5Gw21ZZkIAh4XB8GQK+XMzh+MnRyY34GanRpOo5gVYB//9t5mXd5nPCSFs7Y3H7GJOt1mBJbjEb+hWmqAab60oTe2g7LpC2ZnDFygyJtIIUcUNi8JdPHrETsUTzESV5xM6KZdmPnFjEvOZPqozfCQvx3U9F+h1jIUtBO+ZHKnyO0yT04z4k6XuMKTxKP+pHKozHaBL6dh+SFB9lAgBAAUCFuSb6Zk4Zw/TN1cHhJerE1ZS7N7E371s7JbaNbXN3tDvcBuDc+EJdA9zdXOk4tm3s/zhHewMPbl+nU+UIoZogoAwAixoD4eMGqgYE5RsIKp3puD6qCoI78Qmg/AaPchQ8kko6+sEF1R3SSAV3PYonpt8ER7eJcyXFMUCBAk8DVNBxPeAAPRYuO+IBJ4gwPOAMBWr8dIQhhKS4YbSconT2MAScwIQnQR+/DKTCjs5oRgWakAUbu6keZtjRhGrkQaoaXVEHhA2IWgBXx3RFV7TCgEAEoguq0Bn1E6LrkgiAOKhNCCB8uRaBSIMVybCiM2yonuxuRAX8nWRyYUNnvd/a0QIFQhCAIAQh+BZtRBd0QTVsM1HpM69Xi25oQgU6S8ZWVFpgRyt6pQCnBzoH3UXqoUA26tYrCO5KR2fY0QAbqqTVGHQrDJh0oQsU8CoS02Wi1qIelbuhcnl3FexoRiDqUIGalC/fFfWoQGBichpaJpT3MAaY7WubixBsy3dS2oZtdBwH) format('woff2');
+  unicode-range: U+2b, U+30-39, U+3d;
+}
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: block;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+2b, U+30-39, U+3d;
+}
+
+/* Roboto Mono (SIL OFL, see OFL.txt) — the coding face. Its zero is slashed,
+   as most coding faces are; that is kept deliberately, since meeting a digit
+   drawn more than one way is the whole point of rotating faces.
+   Same twelve-glyph subset. */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+2b, U+30-39, U+3d;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+2b, U+30-39, U+3d;
+}
+/* Edu VIC WA NT Beginner (SIL OFL, see OFL.txt) — the handwriting face,
+   the script children are taught to write in Australian schools, and the
+   same face evie-type uses. Plain 1 and 7, no crossbars. */
+@font-face {
+  font-family: 'Edu VIC WA NT Beginner';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+2b, U+30-39, U+3d;
+}
+@font-face {
+  font-family: 'Edu VIC WA NT Beginner';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+2b, U+30-39, U+3d;
+}
+
+/* Evie's adding game — warm pastels, chunky numerals, no text to read. */
+
+:root {
+  --bg-1: #fffaf2;
+  --bg-2: #edf6ff;
+  --ink: #4a3b8f;          /* numerals — deep enough to read across a room */
+  --op-ink: #f0983c;       /* the + and = signs */
+  --box-face: #ffffff;
+  --box-edge: #ded5f3;
+  --box-ink: #4a3b8f;
+  --caret: #c3b6e8;
+  --empty-edge: #d9d0ea;   /* dashed outline standing in for a group of zero */
+  --good: #4fb477;
+  --hud-ink: #b3aac9;      /* muted: for the grown-up, not the child */
+
+  /* Three numeral faces, one picked at random per sum, so the same digit is
+     met in more than one shape. Sizes are nudged per face to keep the
+     equation optically the same height whichever one comes up. */
+  --font: "Fredoka", "Baloo 2", "Comic Neue", "Century Gothic", "Avenir Next",
+          system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Roboto Mono", "JetBrains Mono", "SF Mono", "Consolas",
+               ui-monospace, monospace;
+  --font-hand: "Edu VIC WA NT Beginner", "Comic Sans MS", "Comic Neue",
+               cursive, system-ui, sans-serif;
+
+  /* Fixed UI chrome font — the stats HUD and version tag stay on the OS
+     default sans-serif; they're HUD text, not part of the lesson. */
+  --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+             Arial, sans-serif;
+
+  --emoji-size: clamp(30px, 6.4vh, 74px);
+  --emoji-gap: clamp(6px, 1.1vw, 18px);
+  --groups-gap: clamp(20px, 4.5vw, 76px);
+  /* An emoji glyph advances wider than its font-size, and by a different
+     amount on every platform. Pinning each one to a fixed cell keeps five to
+     a row everywhere instead of letting the row wrap early. */
+  --pip-w: calc(var(--emoji-size) * 1.3);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  font-family: var(--font);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- layout ---------- */
+
+#game {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 5vh, 64px);
+  padding: 2vh 2vw 3vh;
+}
+
+/* ---------- corner HUD ----------
+   Deliberately small and low-contrast: this is for the grown-up looking over
+   her shoulder, not a score for the child to chase. */
+
+#stats {
+  position: absolute;
+  top: clamp(10px, 2vh, 22px);
+  right: clamp(12px, 2vw, 28px);
+  text-align: right;
+  color: var(--hud-ink);
+  font-family: var(--ui-font);
+  font-size: clamp(12px, 1.3vw, 17px);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+/* small, muted, always-on-top build tag — for the grown-up, not the child */
+#version {
+  position: fixed;
+  bottom: clamp(6px, 1.2vh, 14px);
+  right: clamp(10px, 2vw, 24px);
+  z-index: 20;
+  font-size: 13px;
+  color: var(--hud-ink);
+  opacity: 0.55;
+  pointer-events: none;
+  font-family: var(--ui-font);
+}
+
+/* ---------- emoji groups ---------- */
+
+#groups {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--groups-gap);
+  /* the gap closing is what makes the two groups slide together on a win */
+  transition: gap 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: var(--emoji-gap);
+  /* five to a row, ten-frame style, so a group stays countable at a glance */
+  max-width: calc(5 * var(--pip-w) + 4 * var(--emoji-gap));
+  min-height: calc(var(--emoji-size) * 1.25);
+}
+
+.pip {
+  display: inline-flex;
+  justify-content: center;
+  width: var(--pip-w);
+  font-size: var(--emoji-size);
+  line-height: 1.25;
+  filter: drop-shadow(0 6px 10px rgba(150, 130, 190, 0.22));
+  animation: pip-in 0.34s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes pip-in {
+  0%   { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* A group of zero still gets a visible container, so it reads as "nothing
+   here" rather than as a rendering bug. */
+.group.is-empty {
+  width: calc(var(--emoji-size) * 1.9);
+  min-height: calc(var(--emoji-size) * 1.35);
+  border: clamp(3px, 0.4vw, 5px) dashed var(--empty-edge);
+  border-radius: clamp(14px, 1.8vw, 26px);
+}
+
+#group-plus {
+  width: 1.1em;
+  overflow: hidden;
+  text-align: center;
+  font-size: clamp(34px, 5vw, 76px);
+  font-weight: 700;
+  color: var(--op-ink);
+  opacity: 0.85;
+  transition: opacity 0.3s ease-out, transform 0.4s ease-out,
+              width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Correct answer: the two groups slide together into one combined row. */
+#groups.combine { gap: var(--emoji-gap); }
+
+#groups.combine #group-plus {
+  width: 0;
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+/* ---------- equation ---------- */
+
+#equation {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 30px);
+  font-size: calc(clamp(56px, 10.5vw, 148px) * var(--face-scale, 1));
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* One of these lands on the equation per problem — see loadProblem(). */
+#equation[data-face="mono"] {
+  font-family: var(--font-mono);
+  --face-scale: 0.94;             /* mono digits run tall; pull them back */
+}
+
+#equation[data-face="hand"] {
+  font-family: var(--font-hand);
+  --face-scale: 1.06;             /* the school script draws small */
+}
+
+#equation.shake { animation: shake 0.42s ease-out 1; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20%      { transform: translateX(-14px) rotate(-1.4deg); }
+  45%      { transform: translateX(13px) rotate(1.4deg); }
+  72%      { transform: translateX(-7px) rotate(-0.7deg); }
+}
+
+.num {
+  color: var(--ink);
+  text-shadow: 0 5px 0 rgba(255, 255, 255, 0.85),
+               0 10px 18px rgba(140, 110, 200, 0.22);
+  transform-origin: 50% 70%;
+  will-change: transform;
+}
+
+.op {
+  color: var(--op-ink);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+#answer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1em;
+  padding: 0.06em 0.16em 0.14em;
+  border-radius: clamp(16px, 2.2vw, 34px);
+  background: var(--box-face);
+  color: var(--box-ink);
+  box-shadow: 0 8px 0 var(--box-edge), 0 14px 26px rgba(150, 130, 190, 0.2);
+  transition: box-shadow 0.25s ease-out, color 0.25s ease-out;
+}
+
+/* Zero-width strut: holds the box at full height while it is still empty,
+   so it doesn't collapse to a flat pill between problems. */
+#answer::before {
+  content: "\200b";
+  width: 0;
+}
+
+/* Blinking bar, shown only while the box is empty — a wordless "type here". */
+#answer.is-empty::after {
+  content: "";
+  position: absolute;
+  width: 0.09em;
+  height: 0.62em;
+  border-radius: 999px;
+  background: var(--caret);
+  animation: blink 1.15s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%, 55%  { opacity: 1; }
+  56%, 99% { opacity: 0; }
+}
+
+#answer.correct {
+  color: var(--good);
+  box-shadow: 0 8px 0 #bfe8cd, 0 0 0 clamp(6px, 0.9vw, 14px) rgba(126, 217, 159, 0.3),
+              0 14px 30px rgba(120, 190, 150, 0.35);
+}
+
+.num.cheer,
+#answer.cheer {
+  animation: cheer 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1;
+}
+
+@keyframes cheer {
+  0%   { transform: translateY(0) scale(1); }
+  35%  { transform: translateY(-32px) scale(1.18); }
+  70%  { transform: translateY(0) scale(0.97); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* ---------- background celebration sweep ---------- */
+
+#flash {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg,
+    rgba(255, 236, 205, 0) 0%,
+    rgba(255, 236, 205, 0.95) 22%,
+    rgba(214, 240, 255, 0.95) 46%,
+    rgba(224, 255, 232, 0.95) 68%,
+    rgba(255, 246, 208, 0) 100%);
+  background-size: 260% 100%;
+  background-position: 130% 0;
+}
+
+#flash.sweep { animation: sweep 1.4s ease-in-out 1; }
+
+@keyframes sweep {
+  0%   { opacity: 0;    background-position: 130% 0; }
+  22%  { opacity: 0.8; }
+  78%  { opacity: 0.8; }
+  100% { opacity: 0;    background-position: -60% 0; }
+}
+
+/* ---------- confetti ---------- */
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* ---------- start screen ----------
+   Only exists to collect the tap that lets browsers unmute audio and speech. */
+
+#start {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3vmin, 28px);
+  background: linear-gradient(160deg, #fff7ec 0%, #eaf4ff 100%);
+}
+
+#start-label {
+  margin: 0;
+  font-family: var(--ui-font);
+  font-size: clamp(18px, 3.4vmin, 28px);
+  font-weight: 600;
+  color: var(--hud-ink);
+}
+
+#start-btn {
+  width: clamp(220px, 42vmin, 420px);
+  height: clamp(220px, 42vmin, 420px);
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(150deg, #ffe2c2, #cfe9ff 60%, #d9ffe8);
+  box-shadow: 0 16px 0 #eed6bd, 0 26px 50px rgba(150, 130, 190, 0.3);
+  cursor: pointer;
+  animation: bob 1.8s ease-in-out infinite;
+  padding: 0;
+}
+
+#start-btn:active {
+  transform: translateY(10px);
+  box-shadow: 0 6px 0 #eed6bd, 0 12px 24px rgba(150, 130, 190, 0.3);
+  animation: none;
+}
+
+#start-icon {
+  display: block;
+  font-size: clamp(96px, 20vmin, 200px);
+  line-height: 1;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

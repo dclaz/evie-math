@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Adding Fun</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="confetti"></canvas>
+
+  <div id="flash" aria-hidden="true"></div>
+
+  <main id="game" class="hidden">
+    <div id="stats">
+      <div id="stat-score">✅ 0 · 0%</div>
+      <div id="stat-rate">0 correct/min</div>
+    </div>
+
+    <div id="groups">
+      <div class="group" id="group-a"></div>
+      <div id="group-plus" aria-hidden="true">+</div>
+      <div class="group" id="group-b"></div>
+    </div>
+
+    <div id="equation">
+      <span class="num" id="num-a"></span>
+      <span class="op">+</span>
+      <span class="num" id="num-b"></span>
+      <span class="op">=</span>
+      <span id="answer"><span id="answer-text"></span></span>
+    </div>
+  </main>
+
+  <div id="start">
+    <button id="start-btn" type="button" aria-label="Start">
+      <span id="start-icon">🧮</span>
+    </button>
+    <p id="start-label" aria-hidden="true">Click to begin</p>
+  </div>
+
+  <div id="version" aria-hidden="true">v0.1.0</div>
+
+<script src="emojis.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
